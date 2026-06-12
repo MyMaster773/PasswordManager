@@ -30,6 +30,8 @@ def mainmenu():
     sel()
 
 def ap():
+    f = open("database.txt", "a")
+    
     global us,ui
     print("Enter the name of Website")
     us = input()
@@ -44,7 +46,9 @@ def ap():
     if (ui == "n"):
         ap()
     elif (ui == "y"):
-        print("Database sucessfully updated!")
+        f.write(f"{us} : {up}\n")
+        f.close
+        print("Database sucessfully updated!\n\n")
         mainmenu()
         
 

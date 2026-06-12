@@ -22,7 +22,7 @@ def sel():
 def mainmenu():
 
     global ui
-    print("===Password Manager=== v0.1")
+    print("===Password Manager=== v0.2")
 
     print("1. Add Password\n2. View Password\n3. Deleat Password\n4. Exit")
 

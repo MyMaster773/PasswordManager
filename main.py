@@ -1,4 +1,5 @@
 import sys
+import os
 ui = "x"
 us = "x"
 up = "x"
@@ -18,13 +19,14 @@ def sel():
     elif (ui == 2):
         vp()
     else:
-        print("Sorry, this section is under construction")
+        print("\nSorry, this section is under construction\n")
+        mainmenu()
 
 
 def mainmenu():
 
     global ui
-    print("===Password Manager=== v0.2")
+    print("===Password Manager=== v0.5")
 
     print("1. Add Password\n2. View Password\n3. Deleat Password\n4. Exit")
 
@@ -54,6 +56,9 @@ def ap():
         mainmenu()
         
 def vp():
+    if not os.path.exists("database.txt"):
+        print("\nNo passwords saved.\n")
+        mainmenu()
     f = open("database.txt", "r")
     pd = f.read()
     print("The saved passwords are the following: \n")

@@ -1,3 +1,6 @@
+#PASSWORD MANAGER V0.7
+# sel = selection  :  ap = add password  :  vp = view password  :  dp = delete password
+
 import sys
 import os
 ui = "x"
@@ -14,10 +17,12 @@ def sel():
         else:
             print("\n\n")
             mainmenu()
-    elif (ui == 1):
+    elif(ui == 1):
         ap()
-    elif (ui == 2):
+    elif(ui == 2):
         vp()
+    elif(ui == 3):
+        dp()
     else:
         print("\nSorry, this section is under construction\n")
         mainmenu()
@@ -26,9 +31,9 @@ def sel():
 def mainmenu():
 
     global ui
-    print("===Password Manager=== v0.5")
+    print("===Password Manager=== v0.7")
 
-    print("1. Add Password\n2. View Password\n3. Deleat Password\n4. Exit")
+    print("1. Add Password\n2. View Password\n3. Delete Password\n4. Exit")
 
     ui = int(input("What would like to do? \n"))
     sel()
@@ -66,6 +71,16 @@ def vp():
     f.close()
     print("\n\n")
     mainmenu()
+
+def dp():
+    print("Are you sure that you would like to delete all the saved passwords?? y/n")
+    ui = input()
+    if(ui != "y" and ui != "n"):
+        print("Please enter a valid option  \"y\" or \"n\"")
+        dp()
+    elif(ui == "n"):
+        print("\n")
+        mainmenu()
 
 
 

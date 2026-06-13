@@ -15,6 +15,8 @@ def sel():
             mainmenu()
     elif (ui == 1):
         ap()
+    elif (ui == 2):
+        vp()
     else:
         print("Sorry, this section is under construction")
 
@@ -51,6 +53,15 @@ def ap():
         print("Database sucessfully updated!\n\n")
         mainmenu()
         
+def vp():
+    f = open("database.txt", "r")
+    pd = f.read()
+    print("The saved passwords are the following: \n")
+    print(pd)
+    f.close()
+    print("\n\n")
+    mainmenu()
+
 
 
 mainmenu()

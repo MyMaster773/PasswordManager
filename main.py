@@ -44,7 +44,7 @@ def ap():
     global us,ui
     print("Enter the name of Website")
     us = input()
-    print(f"Whats the password for {us}")
+    print(f"What's the password for {us}")
     up = input()
     print(f"The password for \n{us} : {up}")
     print("Is this correct? y/n")
@@ -56,14 +56,15 @@ def ap():
         ap()
     elif (ui == "y"):
         f.write(f"{us} : {up}\n")
-        f.close
-        print("Database sucessfully updated!\n\n")
+        f.close()
+        print("Database successfully updated!\n\n")
         mainmenu()
         
 def vp():
     if not os.path.exists("database.txt"):
         print("\nNo passwords saved.\n")
         mainmenu()
+        return()
     f = open("database.txt", "r")
     pd = f.read()
     print("The saved passwords are the following: \n")
